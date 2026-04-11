@@ -1,0 +1,41 @@
+2026-04-06 16:24:19 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:24:19 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:24:19 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:24:19 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:24:19 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:24:19 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:24:19 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:24:19 [INF] Listando comentarios
+2026-04-06 16:24:19 [INF] Listando tipos de usuario
+2026-04-06 16:24:19 [INF] Listando usuarios
+2026-04-06 16:30:59 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:30:59 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:30:59 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:30:59 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:30:59 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:30:59 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:30:59 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:30:59 [INF] Listando comentarios
+2026-04-06 16:30:59 [INF] Listando tipos de usuario
+2026-04-06 16:30:59 [INF] Listando usuarios
+2026-04-06 16:33:36 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:33:36 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:33:36 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:33:36 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:33:36 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:33:36 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:33:36 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:33:36 [INF] Listando comentarios
+2026-04-06 16:33:36 [INF] Listando tipos de usuario
+2026-04-06 16:33:36 [INF] Listando usuarios
+2026-04-06 16:40:54 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:40:54 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:40:54 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:40:54 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:40:54 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:40:54 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:40:54 [WRN] Failed to determine the https port for redirect.
+2026-04-06 16:40:54 [INF] Listando comentarios
+2026-04-06 16:40:54 [INF] Listando tipos de usuario
+2026-04-06 16:40:54 [INF] Listando usuarios
+2026-04-06 16:40:54 [WRN] Usuario 999 nao encontrado

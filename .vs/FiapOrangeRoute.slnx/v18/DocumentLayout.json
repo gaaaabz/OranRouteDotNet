@@ -1,0 +1,530 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\customwebapplicationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\customwebapplicationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\controllers\\linkscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\controllers\\linkscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\controllers\\trilhacarreirascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\controllers\\trilhacarreirascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\controllers\\tagscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\controllers\\tagscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\controllers\\comentarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\controllers\\comentarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\views\\links\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\views\\links\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\unit\\tipousuariocontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\unit\\tipousuariocontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\controllers\\tagcarreirascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\controllers\\tagcarreirascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\controllers\\tipousuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\controllers\\tipousuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\integration\\usuariointegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\integration\\usuariointegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\integration\\tipousuariointegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\integration\\tipousuariointegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\integration\\trilhacarreiraintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\integration\\trilhacarreiraintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\integration\\tagintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\integration\\tagintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\integration\\comentariointegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\integration\\comentariointegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\unit\\trilhacarreiracontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\unit\\trilhacarreiracontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\unit\\usuariocontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\unit\\usuariocontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\integration\\favoritointegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\integration\\favoritointegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\fiaporangeroute.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\fiaporangeroute.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute.test\\integration\\linkintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01181183-51E3-4EDA-B8C4-A670D1E19911}|FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj|solutionrelative:fiaporangeroute.test\\integration\\linkintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\views\\comentarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\views\\comentarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\views\\tagcarreiras\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\views\\tagcarreiras\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\views\\favoritoes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\views\\favoritoes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\models\\tagcarreira.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\models\\tagcarreira.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\models\\trilhacarreira.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\models\\trilhacarreira.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|c:\\users\\gabriel\\documents\\nova pasta\\fiapprodutos\\fiaporangeroute\\fiaporangeroute\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A508F316-78A1-42A0-9FEB-A8A230B7E695}|FiapOrangeRoute\\FiapOrangeRoute.csproj|solutionrelative:fiaporangeroute\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LinksController.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\LinksController.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Controllers\\LinksController.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\LinksController.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Controllers\\LinksController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAmwCAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:22:24.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TagCarreirasController.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\TagCarreirasController.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Controllers\\TagCarreirasController.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\TagCarreirasController.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Controllers\\TagCarreirasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:20:45.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TagsController.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\TagsController.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Controllers\\TagsController.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\TagsController.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Controllers\\TagsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:21:43.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomWebApplicationFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\CustomWebApplicationFactory.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\CustomWebApplicationFactory.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\CustomWebApplicationFactory.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\CustomWebApplicationFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:47:53.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TipoUsuarioControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Unit\\TipoUsuarioControllerTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Unit\\TipoUsuarioControllerTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Unit\\TipoUsuarioControllerTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Unit\\TipoUsuarioControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T19:01:33.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\UnitTest1.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T12:37:13.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Program.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Program.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Program.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Program.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAswEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T11:45:00.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ComentariosController.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\ComentariosController.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Controllers\\ComentariosController.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\ComentariosController.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Controllers\\ComentariosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:23:35.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TrilhaCarreirasController.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\TrilhaCarreirasController.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Controllers\\TrilhaCarreirasController.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\TrilhaCarreirasController.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Controllers\\TrilhaCarreirasController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAABUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:19:24.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Views\\Links\\Details.cshtml",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Views\\Links\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Views\\Links\\Details.cshtml",
+              "RelativeToolTip": "FiapOrangeRoute\\Views\\Links\\Details.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T19:08:03.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TipoUsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\TipoUsuariosController.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Controllers\\TipoUsuariosController.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\TipoUsuariosController.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Controllers\\TipoUsuariosController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:20:09.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:17:33.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UsuarioIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\UsuarioIntegrationTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Integration\\UsuarioIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\UsuarioIntegrationTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Integration\\UsuarioIntegrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:27:56.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TipoUsuarioIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\TipoUsuarioIntegrationTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Integration\\TipoUsuarioIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\TipoUsuarioIntegrationTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Integration\\TipoUsuarioIntegrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:28:19.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TrilhaCarreiraIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\TrilhaCarreiraIntegrationTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Integration\\TrilhaCarreiraIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\TrilhaCarreiraIntegrationTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Integration\\TrilhaCarreiraIntegrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:28:45.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TagIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\TagIntegrationTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Integration\\TagIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\TagIntegrationTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Integration\\TagIntegrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:29:03.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ComentarioIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\ComentarioIntegrationTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Integration\\ComentarioIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\ComentarioIntegrationTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Integration\\ComentarioIntegrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:29:24.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TrilhaCarreiraControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Unit\\TrilhaCarreiraControllerTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Unit\\TrilhaCarreiraControllerTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Unit\\TrilhaCarreiraControllerTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Unit\\TrilhaCarreiraControllerTests.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA9wBUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:46:54.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA5wBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:09:47.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UsuarioControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Unit\\UsuarioControllerTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Unit\\UsuarioControllerTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Unit\\UsuarioControllerTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Unit\\UsuarioControllerTests.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAcwE8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:31:53.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FiapOrangeRoute.Tests",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj",
+              "RelativeToolTip": "FiapOrangeRoute.test\\FiapOrangeRoute.Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-06T18:31:28.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FavoritoIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\FavoritoIntegrationTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Integration\\FavoritoIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\FavoritoIntegrationTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Integration\\FavoritoIntegrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:29:55.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LinkIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\LinkIntegrationTests.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute.test\\Integration\\LinkIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute.test\\Integration\\LinkIntegrationTests.cs",
+              "RelativeToolTip": "FiapOrangeRoute.test\\Integration\\LinkIntegrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:30:21.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Views\\Comentarios\\Create.cshtml",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Views\\Comentarios\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Views\\Comentarios\\Create.cshtml",
+              "RelativeToolTip": "FiapOrangeRoute\\Views\\Comentarios\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T18:25:30.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Views\\Favoritoes\\Details.cshtml",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Views\\Favoritoes\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Views\\Favoritoes\\Details.cshtml",
+              "RelativeToolTip": "FiapOrangeRoute\\Views\\Favoritoes\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T18:23:42.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Views\\TagCarreiras\\Index.cshtml",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Views\\TagCarreiras\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Views\\TagCarreiras\\Index.cshtml",
+              "RelativeToolTip": "FiapOrangeRoute\\Views\\TagCarreiras\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-06T18:23:54.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "TagCarreira.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Models\\TagCarreira.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Models\\TagCarreira.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Models\\TagCarreira.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Models\\TagCarreira.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:00:57.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Tag.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Models\\Tag.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Models\\Tag.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Models\\Tag.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Models\\Tag.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:00:22.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TrilhaCarreira.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Models\\TrilhaCarreira.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Models\\TrilhaCarreira.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Models\\TrilhaCarreira.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Models\\TrilhaCarreira.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T18:00:03.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "FiapOrangeRoute\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Gabriel\\Documents\\Nova pasta\\FiapProdutos\\FiapOrangeRoute\\FiapOrangeRoute\\Models\\Usuario.cs",
+              "RelativeToolTip": "FiapOrangeRoute\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T17:59:26.228Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

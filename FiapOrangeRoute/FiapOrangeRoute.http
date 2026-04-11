@@ -1,0 +1,6 @@
+@FiapOrangeRoute_HostAddress = http://localhost:5110
+
+GET {{FiapOrangeRoute_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

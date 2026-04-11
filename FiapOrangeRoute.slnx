@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FiapOrangeRoute.test/FiapOrangeRoute.Tests.csproj" />
+  <Project Path="FiapOrangeRoute/FiapOrangeRoute.csproj" />
+</Solution>

@@ -1,0 +1,195 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
+build_property.RootNamespace = FiapOrangeRoute
+build_property.RootNamespace = FiapOrangeRoute
+build_property.ProjectDir = C:\Users\Gabriel\Documents\Nova pasta\FiapProdutos\FiapOrangeRoute\FiapOrangeRoute\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Gabriel\Documents\Nova pasta\FiapProdutos\FiapOrangeRoute\FiapOrangeRoute
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Comentarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Comentarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Comentarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Comentarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Comentarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Favoritoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdG9lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Favoritoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdG9lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Favoritoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdG9lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Favoritoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdG9lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Favoritoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdG9lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Links/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlua3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Links/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlua3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Links/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlua3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Links/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlua3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Links/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlua3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TagCarreiras/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnQ2FycmVpcmFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TagCarreiras/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnQ2FycmVpcmFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TagCarreiras/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnQ2FycmVpcmFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TagCarreiras/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnQ2FycmVpcmFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TagCarreiras/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnQ2FycmVpcmFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Tags/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Tags/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Tags/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Tags/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Tags/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TipoUsuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1VzdWFyaW9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TipoUsuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1VzdWFyaW9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TipoUsuarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1VzdWFyaW9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TipoUsuarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1VzdWFyaW9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TipoUsuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1VzdWFyaW9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TrilhaCarreiras/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpbGhhQ2FycmVpcmFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TrilhaCarreiras/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpbGhhQ2FycmVpcmFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TrilhaCarreiras/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpbGhhQ2FycmVpcmFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TrilhaCarreiras/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpbGhhQ2FycmVpcmFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/TrilhaCarreiras/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpbGhhQ2FycmVpcmFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Usuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Usuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Usuarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Usuarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gabriel/Documents/Nova pasta/FiapProdutos/FiapOrangeRoute/FiapOrangeRoute/Views/Usuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

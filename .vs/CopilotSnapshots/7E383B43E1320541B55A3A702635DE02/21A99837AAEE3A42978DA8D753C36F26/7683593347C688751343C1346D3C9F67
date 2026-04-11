@@ -1,0 +1,60 @@
+﻿using FiapOrangeRoute.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using FiapOrangeRoute.Models;
+
+[ApiController]
+[Route("api/[controller]")]
+public class ComentariosController : ControllerBase
+{
+    private readonly AppDbContext _ctx;
+    private readonly ILogger<ComentariosController> _log;
+
+    public ComentariosController(AppDbContext ctx, ILogger<ComentariosController> log)
+    {
+        _ctx = ctx;
+        _log = log;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        _log.LogInformation("Listando comentarios");
+
+        var comentarios = await _ctx.Comentarios
+            .ToListAsync();
+
+        return Ok(comentarios);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(Comentario comentario)
+    {
+        _ctx.Comentarios.Add(comentario);
+        await _ctx.SaveChangesAsync();
+
+        return CreatedAtAction(nameof(GetById), new { id = comentario.Id }, comentario);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var comentario = await _ctx.Comentarios.FindAsync(id);
+
+        if (comentario == null) return NotFound();
+
+        return Ok(comentario);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var comentario = await _ctx.Comentarios.FindAsync(id);
+        if (comentario == null) return NotFound();
+
+        _ctx.Comentarios.Remove(comentario);
+        await _ctx.SaveChangesAsync();
+
+        return NoContent();
+    }
+}}
