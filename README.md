@@ -42,7 +42,7 @@ Para utilizar o OranRoute, siga os passos abaixo:
 ## Conclusão
 O OranRoute é uma solução poderosa que busca redefinir a forma como as rotas são planejadas e otimizadas
 
-##Membros 
+## Membros 
 - Julia Damasceno Busso - RM560293 - 2TDSPB
 - Gabriel Gomes Cardoso - Rm559597 - 2TDSPB
 - Jhonatan Quispe Torrez - rm560601 - 2TDSPB
