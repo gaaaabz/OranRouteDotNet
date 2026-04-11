@@ -1,7 +1,7 @@
-# Documentação do OranRoute
+# OranRoute
 
 ## Introdução
-O OranRoute é um projeto voltado para a implementação de soluções inovadoras em roteamento inteligente. Utilizando tecnologias de ponta, o OranRoute visa otimizar a eficiência em sistemas de navegação e planejamento de rotas.
+O OranRoute é um projeto voltado para a implementação de soluções inovadoras em roteamento inteligente. Utilizando tecnologias, o OrangeRoute visa otimizar a eficiência em sistemas de navegação e planejamento de rotas.
 
 ## Arquitetura
 A arquitetura do OranRoute é baseada em um modelo modular, onde cada componente foi projetado para ser independente e interagir através de APIs. Isso facilita a manutenção e a escalabilidade do projeto. Os principais componentes incluem:
@@ -40,4 +40,9 @@ Para utilizar o OranRoute, siga os passos abaixo:
 4. Acesse a interface do usuário em `http://localhost:5000`.
 
 ## Conclusão
-O OranRoute é uma solução poderosa que busca redefinir a forma como as rotas são planejadas e optimizadas. Contribuições são sempre bem-vindas!
+O OranRoute é uma solução poderosa que busca redefinir a forma como as rotas são planejadas e otimizadas
+
+##Membros 
+- Julia Damasceno Busso - RM560293 - 2TDSPB
+- Gabriel Gomes Cardoso - Rm559597 - 2TDSPB
+- Jhonatan Quispe Torrez - rm560601 - 2TDSPB
