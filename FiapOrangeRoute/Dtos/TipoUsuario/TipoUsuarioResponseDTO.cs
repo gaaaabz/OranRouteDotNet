@@ -1,6 +1,8 @@
-﻿namespace FiapOrangeRoute.Dtos.TipoUsuario
+﻿namespace FiapOrangeRoute.DTOs.TipoUsuario;
+
+public class TipoUsuarioResponseDTO
 {
-    public class TipoUsuarioResponseDTO
-    {
-    }
+    public int Id { get; set; }
+
+    public string Nome { get; set; } = string.Empty;
 }

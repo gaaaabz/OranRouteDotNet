@@ -1,6 +1,8 @@
-﻿namespace FiapOrangeRoute.Dtos.Tag
+﻿namespace FiapOrangeRoute.DTOs.Tag;
+
+public class TagResponseDTO
 {
-    public class TagResponseDTO
-    {
-    }
+    public int Id { get; set; }
+
+    public string Nome { get; set; } = string.Empty;
 }

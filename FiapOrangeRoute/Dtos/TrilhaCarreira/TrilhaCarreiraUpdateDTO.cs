@@ -1,6 +1,12 @@
-﻿namespace FiapOrangeRoute.Dtos.TrilhaCarreira
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FiapOrangeRoute.DTOs.TrilhaCarreira;
+
+public class TrilhaCarreiraUpdateDTO
 {
-    public class TrilhaCarreiraUpdateDTO
-    {
-    }
+    [Required]
+    [StringLength(150)]
+    public string Titulo { get; set; } = string.Empty;
+
+    public string? Conteudo { get; set; }
 }

@@ -1,6 +1,12 @@
-﻿namespace FiapOrangeRoute.Dtos.TagCarreira
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FiapOrangeRoute.DTOs.TagCarreira;
+
+public class TagCarreiraUpdateDTO
 {
-    public class TagCarreiraUpdateDTO
-    {
-    }
+    [Required]
+    public int IdTag { get; set; }
+
+    [Required]
+    public int IdTrilhaCarreira { get; set; }
 }
