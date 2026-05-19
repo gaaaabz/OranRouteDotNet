@@ -21,123 +21,330 @@ namespace FiapOrangeRoute.Migrations
 
             OracleModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("FiapOrangeRoute.Models.Aluno", b =>
+            modelBuilder.Entity("Comentario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("id_comentario");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CursoId")
+                    b.Property<string>("Ativo")
+                        .HasMaxLength(1)
+                        .HasColumnType("NVARCHAR2(1)")
+                        .HasColumnName("at_comentario");
+
+                    b.Property<string>("Conteudo")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("cd_comentario");
+
+                    b.Property<int>("IdTrilhaCarreira")
                         .HasColumnType("NUMBER(10)");
+
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdTrilhaCarreira");
+
+                    b.HasIndex("IdUsuario");
+
+                    b.ToTable("T_OR_COMENTARIO");
+                });
+
+            modelBuilder.Entity("Favorito", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("id_favorito");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IdTrilhaCarreira")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdTrilhaCarreira");
+
+                    b.HasIndex("IdUsuario");
+
+                    b.ToTable("T_OR_FAVORITO");
+                });
+
+            modelBuilder.Entity("FiapOrangeRoute.Models.TipoUsuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("id_tipo_usuario");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
+                        .HasColumnName("nm_tipo_usuario");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_OR_TIPO_USUARIO");
+                });
+
+            modelBuilder.Entity("Link", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("id_link");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Conteudo")
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("cd_link");
+
+                    b.Property<int>("IdTrilhaCarreira")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("NVARCHAR2(150)")
+                        .HasColumnName("tt_link");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdTrilhaCarreira");
+
+                    b.ToTable("T_OR_LINK");
+                });
+
+            modelBuilder.Entity("Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("id_tag");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("NVARCHAR2(100)")
+                        .HasColumnName("nm_tag");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_OR_TAG");
+                });
+
+            modelBuilder.Entity("TagCarreira", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("id_tag_carreira");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IdTag")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<int>("IdTrilhaCarreira")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdTag");
+
+                    b.HasIndex("IdTrilhaCarreira");
+
+                    b.ToTable("T_OR_TAG_CARREIRA");
+                });
+
+            modelBuilder.Entity("TrilhaCarreira", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("id_trilha_carreira");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Conteudo")
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("cd_trilha_carreira");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("NVARCHAR2(150)")
+                        .HasColumnName("tt_trilha_carreira");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_OR_TRILHA_CARREIRA");
+                });
+
+            modelBuilder.Entity("Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("id_usuario");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Ativo")
+                        .HasMaxLength(1)
+                        .HasColumnType("NVARCHAR2(1)")
+                        .HasColumnName("at_usuario");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("NVARCHAR2(150)");
+
+                    b.Property<byte[]>("Foto")
+                        .HasColumnType("RAW(2000)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .HasColumnType("NVARCHAR2(100)")
+                        .HasColumnName("nm_usuario");
 
-                    b.Property<string>("Rm")
+                    b.Property<string>("Senha")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("NVARCHAR2(20)");
+                        .HasMaxLength(150)
+                        .HasColumnType("NVARCHAR2(150)");
+
+                    b.Property<int>("TipoUsuarioId")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("id_tipo_usuario");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CursoId");
+                    b.HasIndex("TipoUsuarioId");
 
-                    b.ToTable("Alunos");
+                    b.ToTable("T_OR_USUARIO");
                 });
 
-            modelBuilder.Entity("FiapOrangeRoute.Models.Curso", b =>
+            modelBuilder.Entity("Comentario", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
-
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Codigo")
-                        .HasMaxLength(10)
-                        .HasColumnType("NVARCHAR2(10)");
-
-                    b.Property<int>("DuracaoSemestres")
-                        .HasColumnType("NUMBER(10)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cursos");
-                });
-
-            modelBuilder.Entity("FiapOrangeRoute.Models.Professor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
-
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CursoId")
-                        .HasColumnType("NUMBER(10)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
-
-                    b.Property<string>("Matricula")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("NVARCHAR2(20)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
-
-                    b.Property<decimal>("Salario")
-                        .HasColumnType("DECIMAL(18, 2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CursoId");
-
-                    b.ToTable("Professores");
-                });
-
-            modelBuilder.Entity("FiapOrangeRoute.Models.Aluno", b =>
-                {
-                    b.HasOne("FiapOrangeRoute.Models.Curso", "Curso")
-                        .WithMany("Alunos")
-                        .HasForeignKey("CursoId")
+                    b.HasOne("TrilhaCarreira", "TrilhaCarreira")
+                        .WithMany("Comentarios")
+                        .HasForeignKey("IdTrilhaCarreira")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Curso");
-                });
-
-            modelBuilder.Entity("FiapOrangeRoute.Models.Professor", b =>
-                {
-                    b.HasOne("FiapOrangeRoute.Models.Curso", "Curso")
-                        .WithMany()
-                        .HasForeignKey("CursoId")
+                    b.HasOne("Usuario", "Usuario")
+                        .WithMany("Comentarios")
+                        .HasForeignKey("IdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Curso");
+                    b.Navigation("TrilhaCarreira");
+
+                    b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("FiapOrangeRoute.Models.Curso", b =>
+            modelBuilder.Entity("Favorito", b =>
                 {
-                    b.Navigation("Alunos");
+                    b.HasOne("TrilhaCarreira", "TrilhaCarreira")
+                        .WithMany("Favoritos")
+                        .HasForeignKey("IdTrilhaCarreira")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Usuario", "Usuario")
+                        .WithMany("Favoritos")
+                        .HasForeignKey("IdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TrilhaCarreira");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Link", b =>
+                {
+                    b.HasOne("TrilhaCarreira", "TrilhaCarreira")
+                        .WithMany("Links")
+                        .HasForeignKey("IdTrilhaCarreira")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TrilhaCarreira");
+                });
+
+            modelBuilder.Entity("TagCarreira", b =>
+                {
+                    b.HasOne("Tag", "Tag")
+                        .WithMany("TagCarreiras")
+                        .HasForeignKey("IdTag")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TrilhaCarreira", "TrilhaCarreira")
+                        .WithMany("Tags")
+                        .HasForeignKey("IdTrilhaCarreira")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tag");
+
+                    b.Navigation("TrilhaCarreira");
+                });
+
+            modelBuilder.Entity("Usuario", b =>
+                {
+                    b.HasOne("FiapOrangeRoute.Models.TipoUsuario", "TipoUsuario")
+                        .WithMany("Usuarios")
+                        .HasForeignKey("TipoUsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TipoUsuario");
+                });
+
+            modelBuilder.Entity("FiapOrangeRoute.Models.TipoUsuario", b =>
+                {
+                    b.Navigation("Usuarios");
+                });
+
+            modelBuilder.Entity("Tag", b =>
+                {
+                    b.Navigation("TagCarreiras");
+                });
+
+            modelBuilder.Entity("TrilhaCarreira", b =>
+                {
+                    b.Navigation("Comentarios");
+
+                    b.Navigation("Favoritos");
+
+                    b.Navigation("Links");
+
+                    b.Navigation("Tags");
+                });
+
+            modelBuilder.Entity("Usuario", b =>
+                {
+                    b.Navigation("Comentarios");
+
+                    b.Navigation("Favoritos");
                 });
 #pragma warning restore 612, 618
         }
