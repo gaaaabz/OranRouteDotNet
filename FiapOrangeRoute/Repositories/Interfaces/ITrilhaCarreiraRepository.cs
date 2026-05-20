@@ -1,6 +1,14 @@
-﻿namespace FiapOrangeRoute.Repositories.Interfaces
+﻿public interface ITrilhaCarreiraRepository
 {
-    public class ITrilhaCarreiraRepository
-    {
-    }
+    Task<IEnumerable<TrilhaCarreira>> GetAllAsync();
+
+    Task<TrilhaCarreira?> GetByIdAsync(int id);
+
+    Task<TrilhaCarreira> CreateAsync(TrilhaCarreira trilha);
+
+    Task UpdateAsync(TrilhaCarreira trilha);
+
+    Task DeleteAsync(int id);
+
+    Task<bool> ExistsAsync(int id);
 }
