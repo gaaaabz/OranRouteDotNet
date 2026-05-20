@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using FiapOrangeRoute.Data;
-using FiapOrangeRoute.Models;
+﻿using FiapOrangeRoute.DTOs.Comentario;
+using FiapOrangeRoute.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FiapOrangeRoute.Controllers;
 
@@ -9,91 +8,58 @@ namespace FiapOrangeRoute.Controllers;
 [Route("api/[controller]")]
 public class ComentariosController : ControllerBase
 {
-    private readonly AppDbContext _ctx;
-    private readonly ILogger<ComentariosController> _log;
+    private readonly IComentarioService _service;
 
-    public ComentariosController(AppDbContext ctx, ILogger<ComentariosController> log)
+    public ComentariosController(IComentarioService service)
     {
-        _ctx = ctx;
-        _log = log;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> Get()
     {
-        _log.LogInformation("Listando comentarios");
-
-        var comentarios = await _ctx.Comentarios
-            .Include(c => c.Usuario)
-            .Include(c => c.TrilhaCarreira)
-            .ToListAsync();
-
-        return Ok(comentarios);
+        return Ok(await _service.GetAllAsync());
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var comentario = await _ctx.Comentarios
-            .Include(c => c.Usuario)
-            .Include(c => c.TrilhaCarreira)
-            .FirstOrDefaultAsync(c => c.Id == id);
+        var comentario = await _service.GetByIdAsync(id);
 
         if (comentario == null)
-        {
-            _log.LogWarning("Comentario {Id} nao encontrado", id);
             return NotFound();
-        }
 
         return Ok(comentario);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Comentario comentario)
+    public async Task<IActionResult> Post(ComentarioCreateDTO dto)
     {
-        var usuario = await _ctx.Usuarios.FindAsync(comentario.IdUsuario);
-        var trilha = await _ctx.TrilhasCarreira.FindAsync(comentario.IdTrilhaCarreira);
+        var created = await _service.CreateAsync(dto);
 
-        if (usuario == null || trilha == null)
-        {
-            _log.LogWarning("FK invalida em comentario");
-            return BadRequest("Usuario ou Trilha invalido");
-        }
-
-        _ctx.Comentarios.Add(comentario);
-        await _ctx.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetById), new { id = comentario.Id }, comentario);
+        return CreatedAtAction(nameof(GetById),
+            new { id = created.Id },
+            created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, Comentario comentario)
+    public async Task<IActionResult> Put(int id, ComentarioUpdateDTO dto)
     {
-        if (id != comentario.Id)
-            return BadRequest();
+        var updated = await _service.UpdateAsync(id, dto);
 
-        var existing = await _ctx.Comentarios.FindAsync(id);
-        if (existing == null)
+        if (!updated)
             return NotFound();
 
-        existing.Conteudo = comentario.Conteudo;
-        existing.Ativo = comentario.Ativo;
-        existing.IdUsuario = comentario.IdUsuario;
-        existing.IdTrilhaCarreira = comentario.IdTrilhaCarreira;
-
-        await _ctx.SaveChangesAsync();
         return NoContent();
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var comentario = await _ctx.Comentarios.FindAsync(id);
-        if (comentario == null)
-            return NotFound();
+        var deleted = await _service.DeleteAsync(id);
 
-        _ctx.Comentarios.Remove(comentario);
-        await _ctx.SaveChangesAsync();
+        if (!deleted)
+            return NotFound();
 
         return NoContent();
     }

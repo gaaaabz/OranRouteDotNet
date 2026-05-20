@@ -1,35 +1,30 @@
-﻿using FiapOrangeRoute.Data;
+﻿using FiapOrangeRoute.DTOs.Favorito;
+using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
+namespace FiapOrangeRoute.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class FavoritosController : ControllerBase
 {
-    private readonly AppDbContext _ctx;
-    private readonly ILogger<FavoritosController> _log;
+    private readonly IFavoritoService _service;
 
-    public FavoritosController(AppDbContext ctx, ILogger<FavoritosController> log)
+    public FavoritosController(IFavoritoService service)
     {
-        _ctx = ctx;
-        _log = log;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> Get()
     {
-        var favoritos = await _ctx.Favoritos
-            .Include(f => f.Usuario)
-            .Include(f => f.TrilhaCarreira)
-            .ToListAsync();
-
-        return Ok(favoritos);
+        return Ok(await _service.GetAllAsync());
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var favorito = await _ctx.Favoritos.FindAsync(id);
+        var favorito = await _service.GetByIdAsync(id);
 
         if (favorito == null)
             return NotFound();
@@ -38,46 +33,33 @@ public class FavoritosController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Favorito favorito)
+    public async Task<IActionResult> Post(FavoritoCreateDTO dto)
     {
-        var usuario = await _ctx.Usuarios.FindAsync(favorito.IdUsuario);
-        var trilha = await _ctx.TrilhasCarreira.FindAsync(favorito.IdTrilhaCarreira);
+        var created = await _service.CreateAsync(dto);
 
-        if (usuario == null || trilha == null)
-            return BadRequest("Usuario ou Trilha invalido");
-
-        _ctx.Favoritos.Add(favorito);
-        await _ctx.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetById), new { id = favorito.Id }, favorito);
+        return CreatedAtAction(nameof(GetById),
+            new { id = created.Id },
+            created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, Favorito favorito)
+    public async Task<IActionResult> Put(int id, FavoritoUpdateDTO dto)
     {
-        if (id != favorito.Id)
-            return BadRequest();
+        var updated = await _service.UpdateAsync(id, dto);
 
-        var existing = await _ctx.Favoritos.FindAsync(id);
-        if (existing == null)
+        if (!updated)
             return NotFound();
 
-        existing.IdUsuario = favorito.IdUsuario;
-        existing.IdTrilhaCarreira = favorito.IdTrilhaCarreira;
-
-        await _ctx.SaveChangesAsync();
         return NoContent();
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var favorito = await _ctx.Favoritos.FindAsync(id);
-        if (favorito == null)
-            return NotFound();
+        var deleted = await _service.DeleteAsync(id);
 
-        _ctx.Favoritos.Remove(favorito);
-        await _ctx.SaveChangesAsync();
+        if (!deleted)
+            return NotFound();
 
         return NoContent();
     }

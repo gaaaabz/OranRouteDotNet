@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using FiapOrangeRoute.Data;
-using FiapOrangeRoute.Models;
+﻿using FiapOrangeRoute.DTOs.TipoUsuario;
+using FiapOrangeRoute.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FiapOrangeRoute.Controllers;
 
@@ -9,67 +8,58 @@ namespace FiapOrangeRoute.Controllers;
 [Route("api/[controller]")]
 public class TiposUsuarioController : ControllerBase
 {
-    private readonly AppDbContext _ctx;
-    private readonly ILogger<TiposUsuarioController> _log;
+    private readonly ITipoUsuarioService _service;
 
-    public TiposUsuarioController(AppDbContext ctx, ILogger<TiposUsuarioController> log)
+    public TiposUsuarioController(ITipoUsuarioService service)
     {
-        _ctx = ctx;
-        _log = log;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> Get()
     {
-        _log.LogInformation("Listando tipos de usuario");
-        return Ok(await _ctx.TiposUsuario.ToListAsync());
+        return Ok(await _service.GetAllAsync());
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var tipo = await _ctx.TiposUsuario.FindAsync(id);
+        var tipo = await _service.GetByIdAsync(id);
 
         if (tipo == null)
-        {
-            _log.LogWarning("TipoUsuario {Id} nao encontrado", id);
             return NotFound();
-        }
 
         return Ok(tipo);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(TipoUsuario tipo)
+    public async Task<IActionResult> Post(TipoUsuarioCreateDTO dto)
     {
-        _ctx.TiposUsuario.Add(tipo);
-        await _ctx.SaveChangesAsync();
+        var created = await _service.CreateAsync(dto);
 
-        return CreatedAtAction(nameof(GetById), new { id = tipo.Id }, tipo);
+        return CreatedAtAction(nameof(GetById),
+            new { id = created.Id },
+            created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, TipoUsuario tipo)
+    public async Task<IActionResult> Put(int id, TipoUsuarioUpdateDTO dto)
     {
-        if (id != tipo.Id) return BadRequest();
+        var updated = await _service.UpdateAsync(id, dto);
 
-        var existing = await _ctx.TiposUsuario.FindAsync(id);
-        if (existing == null) return NotFound();
+        if (!updated)
+            return NotFound();
 
-        existing.Nome = tipo.Nome;
-
-        await _ctx.SaveChangesAsync();
         return NoContent();
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var tipo = await _ctx.TiposUsuario.FindAsync(id);
-        if (tipo == null) return NotFound();
+        var deleted = await _service.DeleteAsync(id);
 
-        _ctx.TiposUsuario.Remove(tipo);
-        await _ctx.SaveChangesAsync();
+        if (!deleted)
+            return NotFound();
 
         return NoContent();
     }

@@ -1,66 +1,65 @@
-﻿using FiapOrangeRoute.Data;
+﻿using FiapOrangeRoute.DTOs.Tag;
+using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
+namespace FiapOrangeRoute.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class TagsController : ControllerBase
 {
-    private readonly AppDbContext _ctx;
-    private readonly ILogger<TagsController> _log;
+    private readonly ITagService _service;
 
-    public TagsController(AppDbContext ctx, ILogger<TagsController> log)
+    public TagsController(ITagService service)
     {
-        _ctx = ctx;
-        _log = log;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> Get()
     {
-        return Ok(await _ctx.Tags.ToListAsync());
+        return Ok(await _service.GetAllAsync());
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var tag = await _ctx.Tags.FindAsync(id);
-        if (tag == null) return NotFound();
+        var tag = await _service.GetByIdAsync(id);
+
+        if (tag == null)
+            return NotFound();
 
         return Ok(tag);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Tag tag)
+    public async Task<IActionResult> Post(TagCreateDTO dto)
     {
-        _ctx.Tags.Add(tag);
-        await _ctx.SaveChangesAsync();
+        var created = await _service.CreateAsync(dto);
 
-        return CreatedAtAction(nameof(GetById), new { id = tag.Id }, tag);
+        return CreatedAtAction(nameof(GetById),
+            new { id = created.Id },
+            created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, Tag tag)
+    public async Task<IActionResult> Put(int id, TagUpdateDTO dto)
     {
-        if (id != tag.Id) return BadRequest();
+        var updated = await _service.UpdateAsync(id, dto);
 
-        var existing = await _ctx.Tags.FindAsync(id);
-        if (existing == null) return NotFound();
+        if (!updated)
+            return NotFound();
 
-        existing.Nome = tag.Nome;
-
-        await _ctx.SaveChangesAsync();
         return NoContent();
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var tag = await _ctx.Tags.FindAsync(id);
-        if (tag == null) return NotFound();
+        var deleted = await _service.DeleteAsync(id);
 
-        _ctx.Tags.Remove(tag);
-        await _ctx.SaveChangesAsync();
+        if (!deleted)
+            return NotFound();
 
         return NoContent();
     }

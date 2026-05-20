@@ -1,28 +1,24 @@
-﻿using FiapOrangeRoute.Data;
+﻿using FiapOrangeRoute.DTOs.Usuario;
+using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
+namespace FiapOrangeRoute.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class UsuariosController : ControllerBase
 {
-    private readonly AppDbContext _ctx;
-    private readonly ILogger<UsuariosController> _log;
+    private readonly IUsuarioService _service;
 
-    public UsuariosController(AppDbContext ctx, ILogger<UsuariosController> log)
+    public UsuariosController(IUsuarioService service)
     {
-        _ctx = ctx;
-        _log = log;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> Get()
     {
-        _log.LogInformation("Listando usuarios");
-
-        var usuarios = await _ctx.Usuarios
-            .Include(u => u.TipoUsuario)
-            .ToListAsync();
+        var usuarios = await _service.GetAllAsync();
 
         return Ok(usuarios);
     }
@@ -30,62 +26,42 @@ public class UsuariosController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var usuario = await _ctx.Usuarios
-            .Include(u => u.TipoUsuario)
-            .FirstOrDefaultAsync(u => u.Id == id);
+        var usuario = await _service.GetByIdAsync(id);
 
         if (usuario == null)
-        {
-            _log.LogWarning("Usuario {Id} nao encontrado", id);
             return NotFound();
-        }
 
         return Ok(usuario);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Usuario usuario)
+    public async Task<IActionResult> Post(UsuarioCreateDTO dto)
     {
-        var tipo = await _ctx.TiposUsuario.FindAsync(usuario.TipoUsuarioId);
+        var created = await _service.CreateAsync(dto);
 
-        if (tipo == null)
-        {
-            _log.LogWarning("TipoUsuarioId inexistente: {Id}", usuario.TipoUsuarioId);
-            return BadRequest($"TipoUsuarioId {usuario.TipoUsuarioId} nao existe.");
-        }
-
-        _ctx.Usuarios.Add(usuario);
-        await _ctx.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetById), new { id = usuario.Id }, usuario);
+        return CreatedAtAction(nameof(GetById),
+            new { id = created.Id },
+            created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, Usuario usuario)
+    public async Task<IActionResult> Put(int id, UsuarioUpdateDTO dto)
     {
-        if (id != usuario.Id) return BadRequest();
+        var updated = await _service.UpdateAsync(id, dto);
 
-        var existing = await _ctx.Usuarios.FindAsync(id);
-        if (existing == null) return NotFound();
+        if (!updated)
+            return NotFound();
 
-        existing.Nome = usuario.Nome;
-        existing.Email = usuario.Email;
-        existing.Senha = usuario.Senha;
-        existing.TipoUsuarioId = usuario.TipoUsuarioId;
-        existing.Ativo = usuario.Ativo;
-
-        await _ctx.SaveChangesAsync();
         return NoContent();
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var usuario = await _ctx.Usuarios.FindAsync(id);
-        if (usuario == null) return NotFound();
+        var deleted = await _service.DeleteAsync(id);
 
-        _ctx.Usuarios.Remove(usuario);
-        await _ctx.SaveChangesAsync();
+        if (!deleted)
+            return NotFound();
 
         return NoContent();
     }

@@ -1,73 +1,65 @@
-﻿using FiapOrangeRoute.Data;
+﻿using FiapOrangeRoute.DTOs.Link;
+using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
+namespace FiapOrangeRoute.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class LinksController : ControllerBase
 {
-    private readonly AppDbContext _ctx;
-    private readonly ILogger<LinksController> _log;
+    private readonly ILinkService _service;
 
-    public LinksController(AppDbContext ctx, ILogger<LinksController> log)
+    public LinksController(ILinkService service)
     {
-        _ctx = ctx;
-        _log = log;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> Get()
     {
-        return Ok(await _ctx.Links.Include(l => l.TrilhaCarreira).ToListAsync());
+        return Ok(await _service.GetAllAsync());
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var link = await _ctx.Links.FindAsync(id);
-        if (link == null) return NotFound();
+        var link = await _service.GetByIdAsync(id);
+
+        if (link == null)
+            return NotFound();
 
         return Ok(link);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Link link)
+    public async Task<IActionResult> Post(LinkCreateDTO dto)
     {
-        var trilha = await _ctx.TrilhasCarreira.FindAsync(link.IdTrilhaCarreira);
+        var created = await _service.CreateAsync(dto);
 
-        if (trilha == null)
-            return BadRequest("Trilha invalida");
-
-        _ctx.Links.Add(link);
-        await _ctx.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetById), new { id = link.Id }, link);
+        return CreatedAtAction(nameof(GetById),
+            new { id = created.Id },
+            created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, Link link)
+    public async Task<IActionResult> Put(int id, LinkUpdateDTO dto)
     {
-        if (id != link.Id) return BadRequest();
+        var updated = await _service.UpdateAsync(id, dto);
 
-        var existing = await _ctx.Links.FindAsync(id);
-        if (existing == null) return NotFound();
+        if (!updated)
+            return NotFound();
 
-        existing.Titulo = link.Titulo;
-        existing.Conteudo = link.Conteudo;
-        existing.IdTrilhaCarreira = link.IdTrilhaCarreira;
-
-        await _ctx.SaveChangesAsync();
         return NoContent();
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var link = await _ctx.Links.FindAsync(id);
-        if (link == null) return NotFound();
+        var deleted = await _service.DeleteAsync(id);
 
-        _ctx.Links.Remove(link);
-        await _ctx.SaveChangesAsync();
+        if (!deleted)
+            return NotFound();
 
         return NoContent();
     }

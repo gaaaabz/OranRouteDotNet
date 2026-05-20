@@ -1,71 +1,65 @@
-﻿using FiapOrangeRoute.Data;
+﻿using FiapOrangeRoute.DTOs.TrilhaCarreira;
+using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
+namespace FiapOrangeRoute.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class TrilhasCarreiraController : ControllerBase
 {
-    private readonly AppDbContext _ctx;
-    private readonly ILogger<TrilhasCarreiraController> _log;
+    private readonly ITrilhaCarreiraService _service;
 
-    public TrilhasCarreiraController(AppDbContext ctx, ILogger<TrilhasCarreiraController> log)
+    public TrilhasCarreiraController(ITrilhaCarreiraService service)
     {
-        _ctx = ctx;
-        _log = log;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> Get()
     {
-        var trilhas = await _ctx.TrilhasCarreira
-            .Include(t => t.Links)
-            .ToListAsync();
-
-        return Ok(trilhas);
+        return Ok(await _service.GetAllAsync());
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var trilha = await _ctx.TrilhasCarreira.FindAsync(id);
-        if (trilha == null) return NotFound();
+        var trilha = await _service.GetByIdAsync(id);
+
+        if (trilha == null)
+            return NotFound();
 
         return Ok(trilha);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(TrilhaCarreira trilha)
+    public async Task<IActionResult> Post(TrilhaCarreiraCreateDTO dto)
     {
-        _ctx.TrilhasCarreira.Add(trilha);
-        await _ctx.SaveChangesAsync();
+        var created = await _service.CreateAsync(dto);
 
-        return CreatedAtAction(nameof(GetById), new { id = trilha.Id }, trilha);
+        return CreatedAtAction(nameof(GetById),
+            new { id = created.Id },
+            created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, TrilhaCarreira trilha)
+    public async Task<IActionResult> Put(int id, TrilhaCarreiraUpdateDTO dto)
     {
-        if (id != trilha.Id) return BadRequest();
+        var updated = await _service.UpdateAsync(id, dto);
 
-        var existing = await _ctx.TrilhasCarreira.FindAsync(id);
-        if (existing == null) return NotFound();
+        if (!updated)
+            return NotFound();
 
-        existing.Titulo = trilha.Titulo;
-        existing.Conteudo = trilha.Conteudo;
-
-        await _ctx.SaveChangesAsync();
         return NoContent();
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var trilha = await _ctx.TrilhasCarreira.FindAsync(id);
-        if (trilha == null) return NotFound();
+        var deleted = await _service.DeleteAsync(id);
 
-        _ctx.TrilhasCarreira.Remove(trilha);
-        await _ctx.SaveChangesAsync();
+        if (!deleted)
+            return NotFound();
 
         return NoContent();
     }
