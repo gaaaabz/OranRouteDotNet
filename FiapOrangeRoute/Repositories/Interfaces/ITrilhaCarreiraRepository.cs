@@ -1,5 +1,10 @@
-﻿public interface ITrilhaCarreiraRepository
+﻿using FiapOrangeRoute.Helpers;
+
+public interface ITrilhaCarreiraRepository
 {
+    Task<PagedResult<TrilhaCarreira>> GetPagedAsync(
+        PaginationParams paginationParams);
+
     Task<IEnumerable<TrilhaCarreira>> GetAllAsync();
 
     Task<TrilhaCarreira?> GetByIdAsync(int id);

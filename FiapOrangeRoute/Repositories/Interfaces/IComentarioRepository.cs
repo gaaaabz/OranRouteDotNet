@@ -1,5 +1,12 @@
-﻿public interface IComentarioRepository
+﻿using FiapOrangeRoute.Helpers;
+
+namespace FiapOrangeRoute.Repositories.Interfaces;
+
+public interface IComentarioRepository
 {
+    Task<PagedResult<Comentario>> GetPagedAsync(
+        PaginationParams paginationParams);
+
     Task<IEnumerable<Comentario>> GetAllAsync();
 
     Task<Comentario?> GetByIdAsync(int id);

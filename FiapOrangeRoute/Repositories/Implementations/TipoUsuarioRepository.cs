@@ -1,4 +1,5 @@
 ﻿using FiapOrangeRoute.Data;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Models;
 using FiapOrangeRoute.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,38 @@ public class TipoUsuarioRepository : ITipoUsuarioRepository
         _context = context;
     }
 
+    public async Task<PagedResult<TipoUsuario>> GetPagedAsync(
+        PaginationParams paginationParams)
+    {
+        var query = _context.TiposUsuario.AsQueryable();
+
+        if (!string.IsNullOrEmpty(paginationParams.Search))
+        {
+            query = query.Where(t =>
+                t.Nome.Contains(paginationParams.Search));
+        }
+
+        query = paginationParams.SortDirection?.ToLower() == "desc"
+            ? query.OrderByDescending(t => t.Nome)
+            : query.OrderBy(t => t.Nome);
+
+        var totalItems = await query.CountAsync();
+
+        var items = await query
+            .Skip((paginationParams.PageNumber - 1)
+                * paginationParams.PageSize)
+            .Take(paginationParams.PageSize)
+            .ToListAsync();
+
+        return new PagedResult<TipoUsuario>
+        {
+            Items = items,
+            TotalItems = totalItems,
+            PageNumber = paginationParams.PageNumber,
+            PageSize = paginationParams.PageSize
+        };
+    }
+
     public async Task<IEnumerable<TipoUsuario>> GetAllAsync()
     {
         return await _context.TiposUsuario.ToListAsync();
@@ -25,7 +58,8 @@ public class TipoUsuarioRepository : ITipoUsuarioRepository
             .FirstOrDefaultAsync(t => t.Id == id);
     }
 
-    public async Task<TipoUsuario> CreateAsync(TipoUsuario tipoUsuario)
+    public async Task<TipoUsuario> CreateAsync(
+        TipoUsuario tipoUsuario)
     {
         _context.TiposUsuario.Add(tipoUsuario);
 
@@ -55,6 +89,7 @@ public class TipoUsuarioRepository : ITipoUsuarioRepository
 
     public async Task<bool> ExistsAsync(int id)
     {
-        return await _context.TiposUsuario.AnyAsync(t => t.Id == id);
+        return await _context.TiposUsuario
+            .AnyAsync(t => t.Id == id);
     }
 }

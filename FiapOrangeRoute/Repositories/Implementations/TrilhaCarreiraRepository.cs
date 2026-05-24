@@ -1,4 +1,5 @@
 ﻿using FiapOrangeRoute.Data;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,40 @@ public class TrilhaCarreiraRepository : ITrilhaCarreiraRepository
         _context = context;
     }
 
+    public async Task<PagedResult<TrilhaCarreira>> GetPagedAsync(
+        PaginationParams paginationParams)
+    {
+        var query = _context.TrilhasCarreira
+            .Include(t => t.Links)
+            .AsQueryable();
+
+        if (!string.IsNullOrEmpty(paginationParams.Search))
+        {
+            query = query.Where(t =>
+                t.Titulo.Contains(paginationParams.Search));
+        }
+
+        query = paginationParams.SortDirection?.ToLower() == "desc"
+            ? query.OrderByDescending(t => t.Titulo)
+            : query.OrderBy(t => t.Titulo);
+
+        var totalItems = await query.CountAsync();
+
+        var items = await query
+            .Skip((paginationParams.PageNumber - 1)
+                * paginationParams.PageSize)
+            .Take(paginationParams.PageSize)
+            .ToListAsync();
+
+        return new PagedResult<TrilhaCarreira>
+        {
+            Items = items,
+            TotalItems = totalItems,
+            PageNumber = paginationParams.PageNumber,
+            PageSize = paginationParams.PageSize
+        };
+    }
+
     public async Task<IEnumerable<TrilhaCarreira>> GetAllAsync()
     {
         return await _context.TrilhasCarreira
@@ -23,10 +58,13 @@ public class TrilhaCarreiraRepository : ITrilhaCarreiraRepository
     public async Task<TrilhaCarreira?> GetByIdAsync(int id)
     {
         return await _context.TrilhasCarreira
+            .Include(t => t.Links)
+            .Include(t => t.Comentarios)
             .FirstOrDefaultAsync(t => t.Id == id);
     }
 
-    public async Task<TrilhaCarreira> CreateAsync(TrilhaCarreira trilha)
+    public async Task<TrilhaCarreira> CreateAsync(
+        TrilhaCarreira trilha)
     {
         _context.TrilhasCarreira.Add(trilha);
 
@@ -44,7 +82,8 @@ public class TrilhaCarreiraRepository : ITrilhaCarreiraRepository
 
     public async Task DeleteAsync(int id)
     {
-        var trilha = await _context.TrilhasCarreira.FindAsync(id);
+        var trilha = await _context.TrilhasCarreira
+            .FindAsync(id);
 
         if (trilha != null)
         {
@@ -56,6 +95,7 @@ public class TrilhaCarreiraRepository : ITrilhaCarreiraRepository
 
     public async Task<bool> ExistsAsync(int id)
     {
-        return await _context.TrilhasCarreira.AnyAsync(t => t.Id == id);
+        return await _context.TrilhasCarreira
+            .AnyAsync(t => t.Id == id);
     }
 }

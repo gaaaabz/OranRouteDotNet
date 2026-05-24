@@ -1,5 +1,12 @@
-﻿public interface ITagCarreiraRepository
+﻿using FiapOrangeRoute.Helpers;
+
+namespace FiapOrangeRoute.Repositories.Interfaces;
+
+public interface ITagCarreiraRepository
 {
+    Task<PagedResult<TagCarreira>> GetPagedAsync(
+        PaginationParams paginationParams);
+
     Task<IEnumerable<TagCarreira>> GetAllAsync();
 
     Task<TagCarreira?> GetByIdAsync(int id);

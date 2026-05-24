@@ -1,5 +1,12 @@
-﻿public interface ILinkRepository
+﻿using FiapOrangeRoute.Helpers;
+
+namespace FiapOrangeRoute.Repositories.Interfaces;
+
+public interface ILinkRepository
 {
+    Task<PagedResult<Link>> GetPagedAsync(
+        PaginationParams paginationParams);
+
     Task<IEnumerable<Link>> GetAllAsync();
 
     Task<Link?> GetByIdAsync(int id);

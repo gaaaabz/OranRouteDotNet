@@ -1,5 +1,12 @@
-﻿public interface ITagRepository
+﻿using FiapOrangeRoute.Helpers;
+
+namespace FiapOrangeRoute.Repositories.Interfaces;
+
+public interface ITagRepository
 {
+    Task<PagedResult<Tag>> GetPagedAsync(
+        PaginationParams paginationParams);
+
     Task<IEnumerable<Tag>> GetAllAsync();
 
     Task<Tag?> GetByIdAsync(int id);

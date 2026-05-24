@@ -1,4 +1,5 @@
 ﻿using FiapOrangeRoute.Data;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Models;
 using FiapOrangeRoute.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,43 @@ public class UsuarioRepository : IUsuarioRepository
     public UsuarioRepository(AppDbContext context)
     {
         _context = context;
+    }
+
+    public async Task<PagedResult<Usuario>> GetPagedAsync(
+        PaginationParams paginationParams)
+    {
+        var query = _context.Usuarios
+            .Include(u => u.TipoUsuario)
+            .AsQueryable();
+
+        // FILTER
+        if (!string.IsNullOrEmpty(paginationParams.Search))
+        {
+            query = query.Where(u =>
+                u.Nome.Contains(paginationParams.Search) ||
+                u.Email.Contains(paginationParams.Search));
+        }
+
+        // SORT
+        query = paginationParams.SortDirection?.ToLower() == "desc"
+            ? query.OrderByDescending(u => u.Nome)
+            : query.OrderBy(u => u.Nome);
+
+        var totalItems = await query.CountAsync();
+
+        var items = await query
+            .Skip((paginationParams.PageNumber - 1)
+                * paginationParams.PageSize)
+            .Take(paginationParams.PageSize)
+            .ToListAsync();
+
+        return new PagedResult<Usuario>
+        {
+            Items = items,
+            TotalItems = totalItems,
+            PageNumber = paginationParams.PageNumber,
+            PageSize = paginationParams.PageSize
+        };
     }
 
     public async Task<IEnumerable<Usuario>> GetAllAsync()
@@ -65,6 +103,7 @@ public class UsuarioRepository : IUsuarioRepository
 
     public async Task<bool> ExistsAsync(int id)
     {
-        return await _context.Usuarios.AnyAsync(u => u.Id == id);
+        return await _context.Usuarios
+            .AnyAsync(u => u.Id == id);
     }
 }

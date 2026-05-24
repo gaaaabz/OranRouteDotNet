@@ -1,4 +1,5 @@
 ﻿using FiapOrangeRoute.Data;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,40 @@ public class LinkRepository : ILinkRepository
         _context = context;
     }
 
+    public async Task<PagedResult<Link>> GetPagedAsync(
+        PaginationParams paginationParams)
+    {
+        var query = _context.Links
+            .Include(l => l.TrilhaCarreira)
+            .AsQueryable();
+
+        if (!string.IsNullOrEmpty(paginationParams.Search))
+        {
+            query = query.Where(l =>
+                l.Titulo.Contains(paginationParams.Search));
+        }
+
+        query = paginationParams.SortDirection?.ToLower() == "desc"
+            ? query.OrderByDescending(l => l.Titulo)
+            : query.OrderBy(l => l.Titulo);
+
+        var totalItems = await query.CountAsync();
+
+        var items = await query
+            .Skip((paginationParams.PageNumber - 1)
+                * paginationParams.PageSize)
+            .Take(paginationParams.PageSize)
+            .ToListAsync();
+
+        return new PagedResult<Link>
+        {
+            Items = items,
+            TotalItems = totalItems,
+            PageNumber = paginationParams.PageNumber,
+            PageSize = paginationParams.PageSize
+        };
+    }
+
     public async Task<IEnumerable<Link>> GetAllAsync()
     {
         return await _context.Links
@@ -23,6 +58,7 @@ public class LinkRepository : ILinkRepository
     public async Task<Link?> GetByIdAsync(int id)
     {
         return await _context.Links
+            .Include(l => l.TrilhaCarreira)
             .FirstOrDefaultAsync(l => l.Id == id);
     }
 
@@ -56,6 +92,7 @@ public class LinkRepository : ILinkRepository
 
     public async Task<bool> ExistsAsync(int id)
     {
-        return await _context.Links.AnyAsync(l => l.Id == id);
+        return await _context.Links
+            .AnyAsync(l => l.Id == id);
     }
 }

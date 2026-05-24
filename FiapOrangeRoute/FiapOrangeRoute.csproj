@@ -30,9 +30,6 @@
 
   <ItemGroup>
     <Folder Include="Auth\DTOs\" />
-    <Folder Include="Auth\Interfaces\" />
-    <Folder Include="Auth\Settings\" />
-    <Folder Include="Auth\Services\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using FiapOrangeRoute.Data;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,38 @@ public class TagRepository : ITagRepository
     public TagRepository(AppDbContext context)
     {
         _context = context;
+    }
+
+    public async Task<PagedResult<Tag>> GetPagedAsync(
+        PaginationParams paginationParams)
+    {
+        var query = _context.Tags.AsQueryable();
+
+        if (!string.IsNullOrEmpty(paginationParams.Search))
+        {
+            query = query.Where(t =>
+                t.Nome.Contains(paginationParams.Search));
+        }
+
+        query = paginationParams.SortDirection?.ToLower() == "desc"
+            ? query.OrderByDescending(t => t.Nome)
+            : query.OrderBy(t => t.Nome);
+
+        var totalItems = await query.CountAsync();
+
+        var items = await query
+            .Skip((paginationParams.PageNumber - 1)
+                * paginationParams.PageSize)
+            .Take(paginationParams.PageSize)
+            .ToListAsync();
+
+        return new PagedResult<Tag>
+        {
+            Items = items,
+            TotalItems = totalItems,
+            PageNumber = paginationParams.PageNumber,
+            PageSize = paginationParams.PageSize
+        };
     }
 
     public async Task<IEnumerable<Tag>> GetAllAsync()
@@ -54,6 +87,7 @@ public class TagRepository : ITagRepository
 
     public async Task<bool> ExistsAsync(int id)
     {
-        return await _context.Tags.AnyAsync(t => t.Id == id);
+        return await _context.Tags
+            .AnyAsync(t => t.Id == id);
     }
 }
