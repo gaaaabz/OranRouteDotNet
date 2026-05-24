@@ -4,20 +4,12 @@ namespace FiapOrangeRoute.HealthChecks;
 
 public class ApiHealthCheck : IHealthCheck
 {
-
     public Task<HealthCheckResult> CheckHealthAsync(
-
         HealthCheckContext context,
-
         CancellationToken cancellationToken = default)
-
     {
         return Task.FromResult(
-
             HealthCheckResult.Healthy(
-
-                "API respondendo normalmente."));
-
+                "API funcionando corretamente."));
     }
-
 }

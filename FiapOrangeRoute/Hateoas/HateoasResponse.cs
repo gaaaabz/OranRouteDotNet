@@ -1,6 +1,9 @@
-﻿namespace FiapOrangeRoute.Hateoas
+﻿namespace FiapOrangeRoute.HATEOAS;
+
+public class HateoasResponse<T>
 {
-    public class HateoasResponse
-    {
-    }
+    public T Data { get; set; }
+
+    public List<LinkDTO> Links { get; set; }
+        = new();
 }
