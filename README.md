@@ -57,3 +57,190 @@ O OranRouteDotNet inclui funcionalidades para monitoramento contínuo:
 - Julia Damasceno Busso - RM560293 - 2TDSPA
 - Gabriel Gomes Cardoso - Rm559597 - 2TDSPA
 - Jhonatan Quispe Torrez - rm560601 - 2TDSPA
+
+## ESTRUTUTA DO PROJETO
+
+```
+FiapOrangeRoute
+│
+├── Helpers
+│   ├── PaginationParams.cs
+│   └── PagedResult.cs│
+│
+│  
+├── Controllers 
+│   │
+│   ├── UsuariosController.cs
+│   ├── TiposUsuarioController.cs
+│   ├── TrilhasCarreiraController.cs
+│   ├── ComentariosController.cs
+│   ├── FavoritosController.cs
+│   ├── TagsController.cs
+│   ├── LinksController.cs
+│   ├── TagCarreirasController.cs
+│   └── AuthController.cs
+│
+├── DTOs
+│   │
+│   ├── Usuario
+│   │   ├── UsuarioCreateDTO.cs
+│   │   ├── UsuarioUpdateDTO.cs
+│   │   └── UsuarioResponseDTO.cs
+│   │
+│   ├── TipoUsuario
+│   │   ├── TipoUsuarioCreateDTO.cs
+│   │   ├── TipoUsuarioUpdateDTO.cs
+│   │   └── TipoUsuarioResponseDTO.cs
+│   │
+│   ├── TrilhaCarreira
+│   │   ├── TrilhaCarreiraCreateDTO.cs
+│   │   ├── TrilhaCarreiraUpdateDTO.cs
+│   │   └── TrilhaCarreiraResponseDTO.cs
+│   │
+│   ├── Comentario
+│   │   ├── ComentarioCreateDTO.cs
+│   │   ├── ComentarioUpdateDTO.cs
+│   │   └── ComentarioResponseDTO.cs
+│   │
+│   ├── Favorito
+│   │   ├── FavoritoCreateDTO.cs
+│   │   ├── FavoritoUpdateDTO.cs
+│   │   └── FavoritoResponseDTO.cs
+│   │
+│   ├── Tag
+│   │   ├── TagCreateDTO.cs
+│   │   ├── TagUpdateDTO.cs
+│   │   └── TagResponseDTO.cs
+│   │
+│   ├── Link
+│   │   ├── LinkCreateDTO.cs
+│   │   ├── LinkUpdateDTO.cs
+│   │   └── LinkResponseDTO.cs
+│   │
+│   └── TagCarreira
+│       ├── TagCarreiraCreateDTO.cs
+│       ├── TagCarreiraUpdateDTO.cs
+│       └── TagCarreiraResponseDTO.cs
+│
+├── Repositories
+│   │
+│   ├── Interfaces
+│   │   ├── IUsuarioRepository.cs
+│   │   ├── ITipoUsuarioRepository.cs
+│   │   ├── ITrilhaCarreiraRepository.cs
+│   │   ├── IComentarioRepository.cs
+│   │   ├── IFavoritoRepository.cs
+│   │   ├── ITagRepository.cs
+│   │   ├── ILinkRepository.cs
+│   │   └── ITagCarreiraRepository.cs
+│   │
+│   └── Implementations
+│       ├── UsuarioRepository.cs
+│       ├── TipoUsuarioRepository.cs
+│       ├── TrilhaCarreiraRepository.cs
+│       ├── ComentarioRepository.cs
+│       ├── FavoritoRepository.cs
+│       ├── TagRepository.cs
+│       ├── LinkRepository.cs
+│       └── TagCarreiraRepository.cs
+│
+├── Services
+│   │
+│   ├── Interfaces
+│   │   ├── IUsuarioService.cs
+│   │   ├── ITipoUsuarioService.cs
+│   │   ├── ITrilhaCarreiraService.cs
+│   │   ├── IComentarioService.cs
+│   │   ├── IFavoritoService.cs
+│   │   ├── ITagService.cs
+│   │   ├── ILinkService.cs
+│   │   └── ITagCarreiraService.cs
+│   │
+│   └── Implementations
+│       ├── UsuarioService.cs
+│       ├── TipoUsuarioService.cs
+│       ├── TrilhaCarreiraService.cs
+│       ├── ComentarioService.cs
+│       ├── FavoritoService.cs
+│       ├── TagService.cs
+│       ├── LinkService.cs
+│       └── TagCarreiraService.cs
+│
+├── Data
+│   └── AppDbContext.cs
+│
+├── Models
+│   ├── Usuario.cs
+│   ├── TipoUsuario.cs
+│   ├── TrilhaCarreira.cs
+│   ├── Comentario.cs
+│   ├── Favorito.cs
+│   ├── Tag.cs
+│   ├── Link.cs
+│   └── TagCarreira.cs
+│
+├── Mongo
+│   │
+│   ├── MongoDbContext.cs
+│   │
+│   ├── Collections
+│   │   ├── UsuarioLog.cs
+│   │   ├── LoginHistory.cs
+│   │   └── ErrorLog.cs
+│   │
+│   └── Repositories
+│       └── MongoLogRepository.cs
+│
+├── HATEOAS
+│   │
+│   ├── LinkDTO.cs
+│   ├── HateoasResponse.cs
+│   └── HateoasService.cs
+│
+├── Middlewares
+│   │
+│   ├── ExceptionMiddleware.cs
+│   └── LoggingMiddleware.cs
+│
+├── HealthChecks
+│   │
+│   ├── ApiHealthCheck.cs
+│   ├── DatabaseHealthCheck.cs
+│   └── MongoHealthCheck.cs
+│
+├── Logs
+│
+├── Migrations
+│
+├── Tests
+│   │
+│   ├── Unit
+│   │   ├── UsuariosControllerTests.cs
+│   │   ├── TipoUsuarioControllerTests.cs
+│   │   ├── TrilhaCarreiraControllerTests.cs
+│   │   ├── ComentarioControllerTests.cs
+│   │   ├── FavoritoControllerTests.cs
+│   │   ├── TagControllerTests.cs
+│   │   ├── LinkControllerTests.cs
+│   │   └── TagCarreiraControllerTests.cs
+│   │
+│   ├── Integration
+│   │   ├── UsuariosIntegrationTests.cs
+│   │   ├── TipoUsuarioIntegrationTests.cs
+│   │   ├── TrilhasCarreiraIntegrationTests.cs
+│   │   ├── ComentariosIntegrationTests.cs
+│   │   ├── FavoritosIntegrationTests.cs
+│   │   ├── TagsIntegrationTests.cs
+│   │   ├── LinksIntegrationTests.cs
+│   │   └── TagCarreiraIntegrationTests.cs
+│   │
+│   ├── CustomWebApplicationFactory.cs
+│   └── UnitTest1.cs
+│
+├── Views
+│
+├── appsettings.json
+├── Program.cs
+├── README.md
+└── FiapOrangeRoute.csproj
+```
