@@ -1,4 +1,7 @@
-﻿using FiapOrangeRoute.DTOs.Favorito;
+﻿// Controllers/FavoritosController.cs
+
+using FiapOrangeRoute.DTOs.Favorito;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,21 +13,27 @@ public class FavoritosController : ControllerBase
 {
     private readonly IFavoritoService _service;
 
-    public FavoritosController(IFavoritoService service)
+    public FavoritosController(
+        IFavoritoService service)
     {
         _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get(
+        [FromQuery] PaginationParams paginationParams)
     {
-        return Ok(await _service.GetAllAsync());
+        var favoritos = await _service
+            .GetPagedAsync(paginationParams);
+
+        return Ok(favoritos);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var favorito = await _service.GetByIdAsync(id);
+        var favorito = await _service
+            .GetByIdAsync(id);
 
         if (favorito == null)
             return NotFound();
@@ -33,19 +42,25 @@ public class FavoritosController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(FavoritoCreateDTO dto)
+    public async Task<IActionResult> Post(
+        FavoritoCreateDTO dto)
     {
-        var created = await _service.CreateAsync(dto);
+        var created = await _service
+            .CreateAsync(dto);
 
-        return CreatedAtAction(nameof(GetById),
+        return CreatedAtAction(
+            nameof(GetById),
             new { id = created.Id },
             created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, FavoritoUpdateDTO dto)
+    public async Task<IActionResult> Put(
+        int id,
+        FavoritoUpdateDTO dto)
     {
-        var updated = await _service.UpdateAsync(id, dto);
+        var updated = await _service
+            .UpdateAsync(id, dto);
 
         if (!updated)
             return NotFound();
@@ -56,7 +71,8 @@ public class FavoritosController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var deleted = await _service.DeleteAsync(id);
+        var deleted = await _service
+            .DeleteAsync(id);
 
         if (!deleted)
             return NotFound();

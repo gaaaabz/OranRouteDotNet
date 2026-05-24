@@ -1,4 +1,7 @@
-﻿using FiapOrangeRoute.DTOs.Usuario;
+﻿// Services/Implementations/UsuarioService.cs
+
+using FiapOrangeRoute.DTOs.Usuario;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Models;
 using FiapOrangeRoute.Repositories.Interfaces;
 using FiapOrangeRoute.Services.Interfaces;
@@ -8,10 +11,39 @@ namespace FiapOrangeRoute.Services.Implementations;
 public class UsuarioService : IUsuarioService
 {
     private readonly IUsuarioRepository _repository;
+    private readonly ILogger<UsuarioService> _logger;
 
-    public UsuarioService(IUsuarioRepository repository)
+    public UsuarioService(
+        IUsuarioRepository repository,
+        ILogger<UsuarioService> logger)
     {
         _repository = repository;
+        _logger = logger;
+    }
+
+    public async Task<PagedResult<UsuarioResponseDTO>> GetPagedAsync(
+        PaginationParams paginationParams)
+    {
+        var pagedUsuarios = await _repository
+            .GetPagedAsync(paginationParams);
+
+        return new PagedResult<UsuarioResponseDTO>
+        {
+            Items = pagedUsuarios.Items.Select(u =>
+                new UsuarioResponseDTO
+                {
+                    Id = u.Id,
+                    Nome = u.Nome,
+                    Email = u.Email,
+                    Ativo = u.Ativo,
+                    TipoUsuarioId = u.TipoUsuarioId,
+                    TipoUsuarioNome = u.TipoUsuario?.Nome
+                }),
+
+            TotalItems = pagedUsuarios.TotalItems,
+            PageNumber = pagedUsuarios.PageNumber,
+            PageSize = pagedUsuarios.PageSize
+        };
     }
 
     public async Task<IEnumerable<UsuarioResponseDTO>> GetAllAsync()
@@ -47,7 +79,8 @@ public class UsuarioService : IUsuarioService
         };
     }
 
-    public async Task<UsuarioResponseDTO> CreateAsync(UsuarioCreateDTO dto)
+    public async Task<UsuarioResponseDTO> CreateAsync(
+        UsuarioCreateDTO dto)
     {
         var usuario = new Usuario
         {
@@ -61,6 +94,10 @@ public class UsuarioService : IUsuarioService
 
         var created = await _repository.CreateAsync(usuario);
 
+        _logger.LogInformation(
+            "Usuário criado: {Email}",
+            created.Email);
+
         return new UsuarioResponseDTO
         {
             Id = created.Id,
@@ -71,7 +108,9 @@ public class UsuarioService : IUsuarioService
         };
     }
 
-    public async Task<bool> UpdateAsync(int id, UsuarioUpdateDTO dto)
+    public async Task<bool> UpdateAsync(
+        int id,
+        UsuarioUpdateDTO dto)
     {
         var usuario = await _repository.GetByIdAsync(id);
 
@@ -87,6 +126,10 @@ public class UsuarioService : IUsuarioService
 
         await _repository.UpdateAsync(usuario);
 
+        _logger.LogInformation(
+            "Usuário atualizado: {Id}",
+            usuario.Id);
+
         return true;
     }
 
@@ -98,6 +141,10 @@ public class UsuarioService : IUsuarioService
             return false;
 
         await _repository.DeleteAsync(id);
+
+        _logger.LogInformation(
+            "Usuário removido: {Id}",
+            id);
 
         return true;
     }

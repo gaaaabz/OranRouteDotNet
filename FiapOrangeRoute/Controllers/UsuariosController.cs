@@ -1,4 +1,7 @@
-﻿using FiapOrangeRoute.DTOs.Usuario;
+﻿// Controllers/UsuariosController.cs
+
+using FiapOrangeRoute.DTOs.Usuario;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,9 +19,11 @@ public class UsuariosController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get(
+        [FromQuery] PaginationParams paginationParams)
     {
-        var usuarios = await _service.GetAllAsync();
+        var usuarios = await _service
+            .GetPagedAsync(paginationParams);
 
         return Ok(usuarios);
     }
@@ -35,19 +40,24 @@ public class UsuariosController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(UsuarioCreateDTO dto)
+    public async Task<IActionResult> Post(
+        UsuarioCreateDTO dto)
     {
         var created = await _service.CreateAsync(dto);
 
-        return CreatedAtAction(nameof(GetById),
+        return CreatedAtAction(
+            nameof(GetById),
             new { id = created.Id },
             created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, UsuarioUpdateDTO dto)
+    public async Task<IActionResult> Put(
+        int id,
+        UsuarioUpdateDTO dto)
     {
-        var updated = await _service.UpdateAsync(id, dto);
+        var updated = await _service
+            .UpdateAsync(id, dto);
 
         if (!updated)
             return NotFound();

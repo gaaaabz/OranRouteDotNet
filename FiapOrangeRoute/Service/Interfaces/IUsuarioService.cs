@@ -1,9 +1,15 @@
-﻿using FiapOrangeRoute.DTOs.Usuario;
+﻿// Services/Interfaces/IUsuarioService.cs
+
+using FiapOrangeRoute.DTOs.Usuario;
+using FiapOrangeRoute.Helpers;
 
 namespace FiapOrangeRoute.Services.Interfaces;
 
 public interface IUsuarioService
 {
+    Task<PagedResult<UsuarioResponseDTO>> GetPagedAsync(
+        PaginationParams paginationParams);
+
     Task<IEnumerable<UsuarioResponseDTO>> GetAllAsync();
 
     Task<UsuarioResponseDTO?> GetByIdAsync(int id);

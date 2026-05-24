@@ -1,4 +1,7 @@
-﻿using FiapOrangeRoute.DTOs.TrilhaCarreira;
+﻿// Controllers/TrilhasCarreiraController.cs
+
+using FiapOrangeRoute.DTOs.TrilhaCarreira;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,15 +13,20 @@ public class TrilhasCarreiraController : ControllerBase
 {
     private readonly ITrilhaCarreiraService _service;
 
-    public TrilhasCarreiraController(ITrilhaCarreiraService service)
+    public TrilhasCarreiraController(
+        ITrilhaCarreiraService service)
     {
         _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get(
+        [FromQuery] PaginationParams paginationParams)
     {
-        return Ok(await _service.GetAllAsync());
+        var trilhas = await _service
+            .GetPagedAsync(paginationParams);
+
+        return Ok(trilhas);
     }
 
     [HttpGet("{id}")]
@@ -33,19 +41,24 @@ public class TrilhasCarreiraController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(TrilhaCarreiraCreateDTO dto)
+    public async Task<IActionResult> Post(
+        TrilhaCarreiraCreateDTO dto)
     {
         var created = await _service.CreateAsync(dto);
 
-        return CreatedAtAction(nameof(GetById),
+        return CreatedAtAction(
+            nameof(GetById),
             new { id = created.Id },
             created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, TrilhaCarreiraUpdateDTO dto)
+    public async Task<IActionResult> Put(
+        int id,
+        TrilhaCarreiraUpdateDTO dto)
     {
-        var updated = await _service.UpdateAsync(id, dto);
+        var updated = await _service
+            .UpdateAsync(id, dto);
 
         if (!updated)
             return NotFound();

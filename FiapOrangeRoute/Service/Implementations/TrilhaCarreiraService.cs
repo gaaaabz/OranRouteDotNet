@@ -1,31 +1,64 @@
-﻿using FiapOrangeRoute.DTOs.TrilhaCarreira;
+﻿// Services/Implementations/TrilhaCarreiraService.cs
+
+using FiapOrangeRoute.DTOs.TrilhaCarreira;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Repositories.Interfaces;
 using FiapOrangeRoute.Services.Interfaces;
 
 namespace FiapOrangeRoute.Services.Implementations;
 
-public class TrilhaCarreiraService : ITrilhaCarreiraService
+public class TrilhaCarreiraService
+    : ITrilhaCarreiraService
 {
     private readonly ITrilhaCarreiraRepository _repository;
+    private readonly ILogger<TrilhaCarreiraService> _logger;
 
-    public TrilhaCarreiraService(ITrilhaCarreiraRepository repository)
+    public TrilhaCarreiraService(
+        ITrilhaCarreiraRepository repository,
+        ILogger<TrilhaCarreiraService> logger)
     {
         _repository = repository;
+        _logger = logger;
     }
 
-    public async Task<IEnumerable<TrilhaCarreiraResponseDTO>> GetAllAsync()
+    public async Task<PagedResult<TrilhaCarreiraResponseDTO>>
+        GetPagedAsync(PaginationParams paginationParams)
+    {
+        var pagedResult = await _repository
+            .GetPagedAsync(paginationParams);
+
+        return new PagedResult<TrilhaCarreiraResponseDTO>
+        {
+            Items = pagedResult.Items.Select(t =>
+                new TrilhaCarreiraResponseDTO
+                {
+                    Id = t.Id,
+                    Titulo = t.Titulo,
+                    Conteudo = t.Conteudo
+                }),
+
+            TotalItems = pagedResult.TotalItems,
+            PageNumber = pagedResult.PageNumber,
+            PageSize = pagedResult.PageSize
+        };
+    }
+
+    public async Task<IEnumerable<TrilhaCarreiraResponseDTO>>
+        GetAllAsync()
     {
         var trilhas = await _repository.GetAllAsync();
 
-        return trilhas.Select(t => new TrilhaCarreiraResponseDTO
-        {
-            Id = t.Id,
-            Titulo = t.Titulo,
-            Conteudo = t.Conteudo
-        });
+        return trilhas.Select(t =>
+            new TrilhaCarreiraResponseDTO
+            {
+                Id = t.Id,
+                Titulo = t.Titulo,
+                Conteudo = t.Conteudo
+            });
     }
 
-    public async Task<TrilhaCarreiraResponseDTO?> GetByIdAsync(int id)
+    public async Task<TrilhaCarreiraResponseDTO?>
+        GetByIdAsync(int id)
     {
         var trilha = await _repository.GetByIdAsync(id);
 
@@ -40,7 +73,8 @@ public class TrilhaCarreiraService : ITrilhaCarreiraService
         };
     }
 
-    public async Task<TrilhaCarreiraResponseDTO> CreateAsync(TrilhaCarreiraCreateDTO dto)
+    public async Task<TrilhaCarreiraResponseDTO>
+        CreateAsync(TrilhaCarreiraCreateDTO dto)
     {
         var trilha = new TrilhaCarreira
         {
@@ -50,6 +84,10 @@ public class TrilhaCarreiraService : ITrilhaCarreiraService
 
         var created = await _repository.CreateAsync(trilha);
 
+        _logger.LogInformation(
+            "Trilha criada: {Titulo}",
+            created.Titulo);
+
         return new TrilhaCarreiraResponseDTO
         {
             Id = created.Id,
@@ -58,7 +96,9 @@ public class TrilhaCarreiraService : ITrilhaCarreiraService
         };
     }
 
-    public async Task<bool> UpdateAsync(int id, TrilhaCarreiraUpdateDTO dto)
+    public async Task<bool> UpdateAsync(
+        int id,
+        TrilhaCarreiraUpdateDTO dto)
     {
         var trilha = await _repository.GetByIdAsync(id);
 
@@ -69,6 +109,10 @@ public class TrilhaCarreiraService : ITrilhaCarreiraService
         trilha.Conteudo = dto.Conteudo;
 
         await _repository.UpdateAsync(trilha);
+
+        _logger.LogInformation(
+            "Trilha atualizada: {Id}",
+            trilha.Id);
 
         return true;
     }
@@ -81,6 +125,10 @@ public class TrilhaCarreiraService : ITrilhaCarreiraService
             return false;
 
         await _repository.DeleteAsync(id);
+
+        _logger.LogInformation(
+            "Trilha removida: {Id}",
+            id);
 
         return true;
     }

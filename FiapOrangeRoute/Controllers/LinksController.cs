@@ -1,4 +1,7 @@
-﻿using FiapOrangeRoute.DTOs.Link;
+﻿// Controllers/LinksController.cs
+
+using FiapOrangeRoute.DTOs.Link;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,9 +19,13 @@ public class LinksController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get(
+        [FromQuery] PaginationParams paginationParams)
     {
-        return Ok(await _service.GetAllAsync());
+        var links = await _service
+            .GetPagedAsync(paginationParams);
+
+        return Ok(links);
     }
 
     [HttpGet("{id}")]
@@ -33,19 +40,24 @@ public class LinksController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(LinkCreateDTO dto)
+    public async Task<IActionResult> Post(
+        LinkCreateDTO dto)
     {
         var created = await _service.CreateAsync(dto);
 
-        return CreatedAtAction(nameof(GetById),
+        return CreatedAtAction(
+            nameof(GetById),
             new { id = created.Id },
             created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, LinkUpdateDTO dto)
+    public async Task<IActionResult> Put(
+        int id,
+        LinkUpdateDTO dto)
     {
-        var updated = await _service.UpdateAsync(id, dto);
+        var updated = await _service
+            .UpdateAsync(id, dto);
 
         if (!updated)
             return NotFound();

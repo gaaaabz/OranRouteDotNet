@@ -1,4 +1,7 @@
-﻿using FiapOrangeRoute.DTOs.Link;
+﻿// Services/Implementations/LinkService.cs
+
+using FiapOrangeRoute.DTOs.Link;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Models;
 using FiapOrangeRoute.Repositories.Interfaces;
 using FiapOrangeRoute.Services.Interfaces;
@@ -8,27 +11,58 @@ namespace FiapOrangeRoute.Services.Implementations;
 public class LinkService : ILinkService
 {
     private readonly ILinkRepository _repository;
+    private readonly ILogger<LinkService> _logger;
 
-    public LinkService(ILinkRepository repository)
+    public LinkService(
+        ILinkRepository repository,
+        ILogger<LinkService> logger)
     {
         _repository = repository;
+        _logger = logger;
     }
 
-    public async Task<IEnumerable<LinkResponseDTO>> GetAllAsync()
+    public async Task<PagedResult<LinkResponseDTO>>
+        GetPagedAsync(PaginationParams paginationParams)
+    {
+        var pagedResult = await _repository
+            .GetPagedAsync(paginationParams);
+
+        return new PagedResult<LinkResponseDTO>
+        {
+            Items = pagedResult.Items.Select(l =>
+                new LinkResponseDTO
+                {
+                    Id = l.Id,
+                    Titulo = l.Titulo,
+                    Conteudo = l.Conteudo,
+                    IdTrilhaCarreira = l.IdTrilhaCarreira,
+                    TrilhaTitulo = l.TrilhaCarreira?.Titulo
+                }),
+
+            TotalItems = pagedResult.TotalItems,
+            PageNumber = pagedResult.PageNumber,
+            PageSize = pagedResult.PageSize
+        };
+    }
+
+    public async Task<IEnumerable<LinkResponseDTO>>
+        GetAllAsync()
     {
         var links = await _repository.GetAllAsync();
 
-        return links.Select(l => new LinkResponseDTO
-        {
-            Id = l.Id,
-            Titulo = l.Titulo,
-            Conteudo = l.Conteudo,
-            IdTrilhaCarreira = l.IdTrilhaCarreira,
-            TrilhaTitulo = l.TrilhaCarreira?.Titulo
-        });
+        return links.Select(l =>
+            new LinkResponseDTO
+            {
+                Id = l.Id,
+                Titulo = l.Titulo,
+                Conteudo = l.Conteudo,
+                IdTrilhaCarreira = l.IdTrilhaCarreira,
+                TrilhaTitulo = l.TrilhaCarreira?.Titulo
+            });
     }
 
-    public async Task<LinkResponseDTO?> GetByIdAsync(int id)
+    public async Task<LinkResponseDTO?>
+        GetByIdAsync(int id)
     {
         var link = await _repository.GetByIdAsync(id);
 
@@ -45,7 +79,8 @@ public class LinkService : ILinkService
         };
     }
 
-    public async Task<LinkResponseDTO> CreateAsync(LinkCreateDTO dto)
+    public async Task<LinkResponseDTO>
+        CreateAsync(LinkCreateDTO dto)
     {
         var link = new Link
         {
@@ -56,6 +91,10 @@ public class LinkService : ILinkService
 
         var created = await _repository.CreateAsync(link);
 
+        _logger.LogInformation(
+            "Link criado: {Titulo}",
+            created.Titulo);
+
         return new LinkResponseDTO
         {
             Id = created.Id,
@@ -65,7 +104,9 @@ public class LinkService : ILinkService
         };
     }
 
-    public async Task<bool> UpdateAsync(int id, LinkUpdateDTO dto)
+    public async Task<bool> UpdateAsync(
+        int id,
+        LinkUpdateDTO dto)
     {
         var link = await _repository.GetByIdAsync(id);
 
@@ -78,6 +119,10 @@ public class LinkService : ILinkService
 
         await _repository.UpdateAsync(link);
 
+        _logger.LogInformation(
+            "Link atualizado: {Id}",
+            link.Id);
+
         return true;
     }
 
@@ -89,6 +134,10 @@ public class LinkService : ILinkService
             return false;
 
         await _repository.DeleteAsync(id);
+
+        _logger.LogInformation(
+            "Link removido: {Id}",
+            id);
 
         return true;
     }

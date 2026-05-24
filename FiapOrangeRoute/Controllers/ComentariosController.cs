@@ -1,4 +1,7 @@
-﻿using FiapOrangeRoute.DTOs.Comentario;
+﻿// Controllers/ComentariosController.cs
+
+using FiapOrangeRoute.DTOs.Comentario;
+using FiapOrangeRoute.Helpers;
 using FiapOrangeRoute.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,21 +13,27 @@ public class ComentariosController : ControllerBase
 {
     private readonly IComentarioService _service;
 
-    public ComentariosController(IComentarioService service)
+    public ComentariosController(
+        IComentarioService service)
     {
         _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get(
+        [FromQuery] PaginationParams paginationParams)
     {
-        return Ok(await _service.GetAllAsync());
+        var comentarios = await _service
+            .GetPagedAsync(paginationParams);
+
+        return Ok(comentarios);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var comentario = await _service.GetByIdAsync(id);
+        var comentario = await _service
+            .GetByIdAsync(id);
 
         if (comentario == null)
             return NotFound();
@@ -33,19 +42,25 @@ public class ComentariosController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(ComentarioCreateDTO dto)
+    public async Task<IActionResult> Post(
+        ComentarioCreateDTO dto)
     {
-        var created = await _service.CreateAsync(dto);
+        var created = await _service
+            .CreateAsync(dto);
 
-        return CreatedAtAction(nameof(GetById),
+        return CreatedAtAction(
+            nameof(GetById),
             new { id = created.Id },
             created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, ComentarioUpdateDTO dto)
+    public async Task<IActionResult> Put(
+        int id,
+        ComentarioUpdateDTO dto)
     {
-        var updated = await _service.UpdateAsync(id, dto);
+        var updated = await _service
+            .UpdateAsync(id, dto);
 
         if (!updated)
             return NotFound();
@@ -56,7 +71,8 @@ public class ComentariosController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var deleted = await _service.DeleteAsync(id);
+        var deleted = await _service
+            .DeleteAsync(id);
 
         if (!deleted)
             return NotFound();
