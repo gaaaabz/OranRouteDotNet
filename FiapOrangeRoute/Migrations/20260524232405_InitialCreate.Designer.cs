@@ -11,7 +11,7 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace FiapOrangeRoute.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260519121256_InitialCreate")]
+    [Migration("20260524232405_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
