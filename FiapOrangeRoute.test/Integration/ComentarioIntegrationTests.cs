@@ -1,4 +1,4 @@
-﻿using FiapOrangeRoute.Models;
+﻿using FiapOrangeRoute.DTOs.Comentario;
 using System.Net;
 using System.Net.Http.Json;
 
@@ -9,7 +9,8 @@ public class ComentariosIntegrationTests
 {
     private readonly HttpClient _client;
 
-    public ComentariosIntegrationTests(CustomWebApplicationFactory factory)
+    public ComentariosIntegrationTests(
+        CustomWebApplicationFactory factory)
     {
         _client = factory.CreateClient();
     }
@@ -17,7 +18,11 @@ public class ComentariosIntegrationTests
     [Fact]
     public async Task GetComentarios_Retorna200()
     {
-        var response = await _client.GetAsync("/api/comentarios");
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var response =
+            await _client.GetAsync("/api/comentarios");
+
+        Assert.Equal(
+            HttpStatusCode.OK,
+            response.StatusCode);
     }
 }

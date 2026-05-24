@@ -7,21 +7,29 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace FiapOrangeRoute.Tests;
 
-public class CustomWebApplicationFactory : WebApplicationFactory<Program>
+public class CustomWebApplicationFactory
+    : WebApplicationFactory<Program>
 {
-    protected override void ConfigureWebHost(IWebHostBuilder builder)
+    protected override void ConfigureWebHost(
+        IWebHostBuilder builder)
     {
         builder.UseEnvironment("Testing");
 
         builder.ConfigureTestServices(services =>
         {
             var descriptor = services.SingleOrDefault(
-                d => d.ServiceType == typeof(DbContextOptions<AppDbContext>));
+                d => d.ServiceType ==
+                typeof(DbContextOptions<AppDbContext>));
+
             if (descriptor != null)
+            {
                 services.Remove(descriptor);
+            }
 
             services.AddDbContext<AppDbContext>(options =>
-                options.UseInMemoryDatabase("TestDb"));
+            {
+                options.UseInMemoryDatabase("TestDb");
+            });
         });
     }
 }

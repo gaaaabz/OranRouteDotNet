@@ -619,3 +619,11 @@ https://docs.oracle.com/error-help/db/ora-02291/
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-05-24 20:26:25 [INF] Now listening on: https://localhost:7253
+2026-05-24 20:26:26 [INF] Now listening on: http://localhost:5110
+2026-05-24 20:26:26 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-24 20:26:26 [INF] Hosting environment: Development
+2026-05-24 20:26:26 [INF] Content root path: C:\Users\user\Documents\OranRouteDotNet\FiapOrangeRoute
+2026-05-24 20:27:05 [INF] TipoUsuario criado: user
+2026-05-24 20:27:39 [INF] TipoUsuario criado: admin
+2026-05-24 20:29:09 [INF] Usuário criado: teste@email.com

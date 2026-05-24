@@ -1,4 +1,4 @@
-﻿using FiapOrangeRoute.Models;
+﻿using FiapOrangeRoute.DTOs.TrilhaCarreira;
 using System.Net;
 using System.Net.Http.Json;
 
@@ -9,7 +9,8 @@ public class TrilhasCarreiraIntegrationTests
 {
     private readonly HttpClient _client;
 
-    public TrilhasCarreiraIntegrationTests(CustomWebApplicationFactory factory)
+    public TrilhasCarreiraIntegrationTests(
+        CustomWebApplicationFactory factory)
     {
         _client = factory.CreateClient();
     }
@@ -17,20 +18,30 @@ public class TrilhasCarreiraIntegrationTests
     [Fact]
     public async Task GetTrilhas_Retorna200()
     {
-        var response = await _client.GetAsync("/api/trilhascarreira");
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var response =
+            await _client.GetAsync("/api/trilhascarreira");
+
+        Assert.Equal(
+            HttpStatusCode.OK,
+            response.StatusCode);
     }
 
     [Fact]
     public async Task PostTrilha_Retorna201()
     {
-        var trilha = new TrilhaCarreira
+        var trilha = new TrilhaCarreiraCreateDTO
         {
             Titulo = "Backend",
             Conteudo = "Aprender APIs"
         };
 
-        var response = await _client.PostAsJsonAsync("/api/trilhascarreira", trilha);
-        Assert.Equal(HttpStatusCode.Created, response.StatusCode);
+        var response =
+            await _client.PostAsJsonAsync(
+                "/api/trilhascarreira",
+                trilha);
+
+        Assert.Equal(
+            HttpStatusCode.Created,
+            response.StatusCode);
     }
 }

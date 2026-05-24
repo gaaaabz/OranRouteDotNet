@@ -1,4 +1,4 @@
-﻿using FiapOrangeRoute.Models;
+﻿using FiapOrangeRoute.DTOs.Tag;
 using System.Net;
 using System.Net.Http.Json;
 
@@ -9,7 +9,8 @@ public class TagsIntegrationTests
 {
     private readonly HttpClient _client;
 
-    public TagsIntegrationTests(CustomWebApplicationFactory factory)
+    public TagsIntegrationTests(
+        CustomWebApplicationFactory factory)
     {
         _client = factory.CreateClient();
     }
@@ -17,16 +18,29 @@ public class TagsIntegrationTests
     [Fact]
     public async Task GetTags_Retorna200()
     {
-        var response = await _client.GetAsync("/api/tags");
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var response =
+            await _client.GetAsync("/api/tags");
+
+        Assert.Equal(
+            HttpStatusCode.OK,
+            response.StatusCode);
     }
 
     [Fact]
     public async Task PostTag_Retorna201()
     {
-        var tag = new Tag { Nome = "CSharp" };
+        var tag = new TagCreateDTO
+        {
+            Nome = "CSharp"
+        };
 
-        var response = await _client.PostAsJsonAsync("/api/tags", tag);
-        Assert.Equal(HttpStatusCode.Created, response.StatusCode);
+        var response =
+            await _client.PostAsJsonAsync(
+                "/api/tags",
+                tag);
+
+        Assert.Equal(
+            HttpStatusCode.Created,
+            response.StatusCode);
     }
 }
